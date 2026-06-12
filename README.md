@@ -1,18 +1,28 @@
-# Java Iterator Pattern - Factorial Sequence
+# Java Iterator Pattern Exercises
 
-This repository contains my solution to a university exam exercise focused on implementing custom iterators in Java.
+This repository contains my solutions to university exam exercises focused on implementing custom iterators in Java.
+The programs implement the `Iterable` and `Iterator` interfaces to lazily evaluate and generate sequences without storing them in memory.
 
-The program implements the `Iterable` and `Iterator` interfaces to lazily evaluate and generate a sequence of factorial numbers (1!, 2!, 3!, ..., n!).
+## Exercises
 
-## Features
+### 1. Factorial Sequence (`FactIterable` / `FactIterator`)
+Generates a sequence of factorial numbers (1!, 2!, 3!, ..., n!).
 * **Constant Time Complexity**: The `next()` method computes the subsequent factorial in O(1) time by maintaining the state of the previous factorial instead of recalculating it from scratch.
-* **Custom Iterators**: Implements `java.util.Iterator` (`FactIterator`) and `java.lang.Iterable` (`FactIterable`).
+
+### 2. Reverse Range Sequence (`ReverseRange` / `ReverseRangeIterator`)
+Generates a descending sequence of contiguous integers from a starting value (inclusive) down to an ending value (exclusive).
+* Includes a utility method `sumSquaresOf()` that demonstrates consuming the `Iterable` in a standard for-each loop to calculate the sum of the squares of the sequence elements.
 
 ## How to Run
-Compile and run the program from the terminal:
+Compile and run the programs from the terminal:
 
 ```bash
 cd src
 javac *.java
-java Main
+
+# Run Factorial tests
+java -ea Main
+
+# Run Reverse Range tests
+java -ea ReverseRangeUtil
 ```
