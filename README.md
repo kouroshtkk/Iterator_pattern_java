@@ -19,6 +19,10 @@ Generates an ascending sequence of contiguous integers. Unlike standard Java ite
 * `current()`: Returns the element at the current position without advancing the iterator.
 * Includes a utility method `prodOf()` that calculates the product of the sequence by manually traversing it using `moveNext()` and `current()`.
 
+### 4. Custom Iterator Wrapper (`GetMyIterator`)
+An adapter class that wraps a standard `java.util.Iterator<E>` and converts it to a custom `MyIterator<E>` interface.
+* **Separation of Concerns**: Unlike the standard iterator, this custom interface separates the action of advancing (`advance()`) from retrieving the element (`element()`), allowing the current element to be queried multiple times without moving the cursor.
+
 ## How to Run
 Compile and run the programs from the terminal:
 
@@ -34,4 +38,11 @@ java -ea ReverseRangeUtil
 
 # Run C#-style Range tests
 java -ea RangeUtil
+```
+
+To run the custom wrapper tests:
+```bash
+# From the root of the project
+javac my_iterator/*.java
+java -ea my_iterator.MyIteratorTest
 ```
