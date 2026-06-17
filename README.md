@@ -33,6 +33,11 @@ An adapter that converts a standard Java `Iterator<E>` into a JavaScript-style i
 * **Interface**: Uses a single `next()` method that returns a `JSIteratorResult` (a record containing `value` and `done`).
 * **Immutability**: Uses Java `records` to implement the result object, ensuring immutability and clean data handling.
 
+### 7. Index Iterator with Pair Wrapper (`IndexIterator`)
+A decorator that wraps an existing `Iterator<E>` and returns elements paired with their current index.
+* **Pair Class**: A generic utility class `Pair<E1, E2>` used to hold the index and the element.
+* **Indexing**: Automatically maintains a counter to associate each element with its position (0, 1, 2, ...).
+
 ## How to Run
 Compile and run the programs from the terminal:
 
@@ -50,7 +55,7 @@ java -ea ReverseRangeUtil
 java -ea RangeUtil
 ```
 
-To run the custom wrapper, smart iterator, or JS-style iterator tests:
+To run the custom wrapper, smart iterator, JS-style iterator, or index iterator tests:
 ```bash
 # Custom MyIterator wrapper
 javac my_iterator/*.java
@@ -63,4 +68,8 @@ java -cp . smart_iterator.IteratorTest
 # JS-style Iterator Adapter
 javac js_iterator/*.java
 java -cp . js_iterator.IteratorTest
+
+# Index Iterator
+javac index_iterator/*.java
+java -cp . index_iterator.IteratorTest
 ```
