@@ -43,6 +43,11 @@ An iterator that traverses a `String[]` array in reverse order.
 * **Varargs Constructor**: Supports both direct arrays and comma-separated string arguments.
 * **Reverse Logic**: Starts from the last index and moves towards zero.
 
+### 9. Alternating Iterator (`AltIterator`)
+An iterator that merges two existing iterators by alternating their elements.
+* **Alternating Logic**: Switches between the two iterators for each `next()` call.
+* **Exhaustion Handling**: If one iterator finishes early, it continues with the remaining elements of the other.
+
 ## How to Run
 Compile and run the programs from the terminal:
 
@@ -60,7 +65,7 @@ java -ea ReverseRangeUtil
 java -ea RangeUtil
 ```
 
-To run the custom wrapper, smart iterator, JS-style iterator, index iterator, or reverse array iterator tests:
+To run the custom wrapper, smart iterator, JS-style iterator, index iterator, reverse array iterator, or alternating iterator tests:
 ```bash
 # Custom MyIterator wrapper
 javac my_iterator/*.java
@@ -81,4 +86,8 @@ java -cp . index_iterator.IteratorTest
 # Reverse String Array Iterator
 javac string_array_rev/*.java
 java -cp . string_array_rev.IteratorTest
+
+# Alternating Iterator
+javac alt_iterator/*.java
+java -cp . alt_iterator.IteratorTest
 ```
