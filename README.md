@@ -38,6 +38,11 @@ A decorator that wraps an existing `Iterator<E>` and returns elements paired wit
 * **Pair Class**: A generic utility class `Pair<E1, E2>` used to hold the index and the element.
 * **Indexing**: Automatically maintains a counter to associate each element with its position (0, 1, 2, ...).
 
+### 8. Reverse String Array Iterator (`StringArrayRevIterator`)
+An iterator that traverses a `String[]` array in reverse order.
+* **Varargs Constructor**: Supports both direct arrays and comma-separated string arguments.
+* **Reverse Logic**: Starts from the last index and moves towards zero.
+
 ## How to Run
 Compile and run the programs from the terminal:
 
@@ -55,7 +60,7 @@ java -ea ReverseRangeUtil
 java -ea RangeUtil
 ```
 
-To run the custom wrapper, smart iterator, JS-style iterator, or index iterator tests:
+To run the custom wrapper, smart iterator, JS-style iterator, index iterator, or reverse array iterator tests:
 ```bash
 # Custom MyIterator wrapper
 javac my_iterator/*.java
@@ -72,4 +77,8 @@ java -cp . js_iterator.IteratorTest
 # Index Iterator
 javac index_iterator/*.java
 java -cp . index_iterator.IteratorTest
+
+# Reverse String Array Iterator
+javac string_array_rev/*.java
+java -cp . string_array_rev.IteratorTest
 ```
