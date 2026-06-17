@@ -28,6 +28,11 @@ An implementation of a custom `SmartIterator<E>` interface that allows iterating
 * **C#-style interaction**: Uses `moveNext()` to advance and `current()` to retrieve the element.
 * **Robustness**: Handles `null` elements in the array and throws `NoSuchElementException` if `current()` is called before the first `moveNext()` or after iteration ends.
 
+### 6. JavaScript-Style Iterator Adapter (`ToJSIterator`)
+An adapter that converts a standard Java `Iterator<E>` into a JavaScript-style iterator.
+* **Interface**: Uses a single `next()` method that returns a `JSIteratorResult` (a record containing `value` and `done`).
+* **Immutability**: Uses Java `records` to implement the result object, ensuring immutability and clean data handling.
+
 ## How to Run
 Compile and run the programs from the terminal:
 
@@ -45,7 +50,7 @@ java -ea ReverseRangeUtil
 java -ea RangeUtil
 ```
 
-To run the custom wrapper or smart iterator tests:
+To run the custom wrapper, smart iterator, or JS-style iterator tests:
 ```bash
 # Custom MyIterator wrapper
 javac my_iterator/*.java
@@ -54,4 +59,8 @@ java -ea my_iterator.MyIteratorTest
 # SmartIterator for arrays
 javac smart_iterator/*.java
 java -cp . smart_iterator.IteratorTest
+
+# JS-style Iterator Adapter
+javac js_iterator/*.java
+java -cp . js_iterator.IteratorTest
 ```

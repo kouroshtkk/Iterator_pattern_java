@@ -23,6 +23,11 @@ Generates an ascending sequence of contiguous integers. Unlike standard Java ite
 An adapter class that wraps a standard `java.util.Iterator<E>` and converts it to a custom `MyIterator<E>` interface.
 * **Separation of Concerns**: Unlike the standard iterator, this custom interface separates the action of advancing (`advance()`) from retrieving the element (`element()`), allowing the current element to be queried multiple times without moving the cursor.
 
+### 5. Smart Iterator for Arrays (`GetSmartIterator`)
+An implementation of a custom `SmartIterator<E>` interface that allows iterating over an array of type `E[]`.
+* **C#-style interaction**: Uses `moveNext()` to advance and `current()` to retrieve the element.
+* **Robustness**: Handles `null` elements in the array and throws `NoSuchElementException` if `current()` is called before the first `moveNext()` or after iteration ends.
+
 ## How to Run
 Compile and run the programs from the terminal:
 
@@ -40,9 +45,13 @@ java -ea ReverseRangeUtil
 java -ea RangeUtil
 ```
 
-To run the custom wrapper tests:
+To run the custom wrapper or smart iterator tests:
 ```bash
-# From the root of the project
+# Custom MyIterator wrapper
 javac my_iterator/*.java
 java -ea my_iterator.MyIteratorTest
+
+# SmartIterator for arrays
+javac smart_iterator/*.java
+java -cp . smart_iterator.IteratorTest
 ```
